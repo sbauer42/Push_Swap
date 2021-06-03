@@ -1,15 +1,18 @@
-void swaptop(long *a)
+void swaptop(long *a,int len)
 {
-    int x;
+    long x;
     x = a[0];
     a[0] = a[1];
     a[1] = x;
+    readstack(a,len);
 }
 
-void swapboth(long *a,long *b)
+void swapboth(long *a,long *b,int len)
 {
-    swap(a);
-    swap(b);
+    swaptop(a,len);
+    swaptop(b,len);
+    readstack(a,len);
+    readstack(b,len);
 }
 
 void shiftup(long *a, long len)
@@ -26,6 +29,7 @@ void shiftup(long *a, long len)
         a[i] = x;
         x = save;
     }
+    readstack(a,len);
 }
 
 void shiftdown(long *a, int len)
@@ -42,6 +46,7 @@ void shiftdown(long *a, int len)
         a[i] = x;
         x = save;
     }
+    readstack(a,len);
 }
 
 void push(long *a,long *b,int len) 
@@ -52,32 +57,40 @@ void push(long *a,long *b,int len)
     shiftdown(b, len);
     a[len - 1] = VOID;
     b[0] = save;
+    readstack(a,len);
+    readstack(b,len);
 }
 
 void rotateup(long *a,int len)
 {
     long save;
     save = a[0];
-    shiftup(a);
+    shiftup(a, len);
     a[len - 1] = save;
+    readstack(a,len);
 }
 
 void rotaterev(long *a,int len)
 {
     long save;
     save = a[len - 1];
-    shiftdown(a);
+    shiftdown(a, len );
     a[0] = save;
+    readstack(a,len);
 }
 
 void rotaterevboth(long *a,long *b, int len)
 {
     rotaterev(a,len);
     rotaterev(b,len);
+    readstack(a,len);
+    readstack(b,len);
 }
 
 void rotateboth(long *a,long *b,int len)
 {
     rotateup(a,len);
     rotateup(b,len);
+    readstack(a,len);
+    readstack(b,len);
 }

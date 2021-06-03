@@ -1,6 +1,10 @@
-all : 
-	gcc *.c 
+MINI = gcc -o push_swap *.c
 
-re:
-	rm a.out
-	gcc checker.c
+RM = rm -rf push_swap
+all:
+	$(MINI)
+re :
+	$(RM)
+	$(MINI)
+clean :
+	$(RM)
