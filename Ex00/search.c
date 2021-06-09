@@ -1,6 +1,6 @@
 #include "checker.h"
 
-long	smallest(long *a, int len)
+long	smallest(long *a, t_struct *s)
 {
 	long res;
 	int ret;
@@ -23,7 +23,7 @@ long	smallest(long *a, int len)
 	return ret;
 }
 
-void	copylist(long *a, long *clone, int start, int len)
+void	copylist(long *a, long *clone, int start, t_struct *s)
 {
 	while(start < len)
 	{
@@ -32,7 +32,7 @@ void	copylist(long *a, long *clone, int start, int len)
 	}
 }
 
-void	sortlist(long *a, long *list, int len)
+void	sortlist(long *a, long *list, t_struct *s)
 {
 	long *clone;
 	int i;

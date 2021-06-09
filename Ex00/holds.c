@@ -16,7 +16,7 @@ int		insidelist(long target, long *chunk)
 	return (0);
 }
 
-void	holds(long *a, long *chunk, int *iht, int *ihb, int len)
+void	holds(long *a, long *chunk, int *iht, int *ihb, t_struct *s)
 {
 	int	i;
 
@@ -39,3 +39,4 @@ void	holds(long *a, long *chunk, int *iht, int *ihb, int len)
 		i--;
 	}
 }
+

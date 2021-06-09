@@ -1,6 +1,6 @@
 #include "checker.h"
 
-void swaptop(long *a, int len)
+void swaptop(long *a, t_struct *s)
 {
 	long x;
 
@@ -10,15 +10,7 @@ void swaptop(long *a, int len)
 	readstack(a, len);
 }
 
-void swapboth(long *a, long *b, int len)
-{
-	swaptop(a, len);
-	swaptop(b, len);
-	readstack(a, len);
-	readstack(b, len);
-}
-
-void shiftup(long *a, long len)
+void shiftup(long *a, t_struct *s)
 {
 	int i;
 	long x;
@@ -37,7 +29,7 @@ void shiftup(long *a, long len)
 	readstack(a, len);
 }
 
-void shiftdown(long *a, int len)
+void shiftdown(long *a, t_struct *s)
 {
 	int i;
 	long x;
@@ -56,7 +48,7 @@ void shiftdown(long *a, int len)
 	readstack(a,len);
 }
 
-void push(long *a, long *b, int len) 
+void push(long *a, long *b, t_struct *s) 
 {
 	long save;
 

@@ -46,14 +46,14 @@ int		writestacks(t_struct *s, char **av)
 	return (1);
 }
 
-void	readstack(long *a, int len)
+void	readstack(long *a, t_struct *s)
 {
     int	x;
 
 	x = 0;
-	while (x < len)
+	while (x <  s->len)
     {
-		if (a[x] == VOID && x != len - 1)
+		if (a[x] == VOID && x != s->len - 1)
 		{
 			a[x] = a[x+1];
 			a[x+1] = VOID;
@@ -63,7 +63,7 @@ void	readstack(long *a, int len)
 	}
 }
 
-void	treadstack(long *a, int len)
+void	treadstack(long *a, t_struct *s)
 {
 	int x;
 

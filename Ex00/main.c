@@ -1,6 +1,6 @@
 #include "checker.h"
 
-void	doit(long *a, long *b, int chunks, int len)
+void	doit(long *a, long *b, int chunks, t_struct *s)
 {
 	long	*list;
 
@@ -22,6 +22,7 @@ int	main(int ac , char **av)
 	s->a = malloc(sizeof(long) * s->len);
 	s->b = malloc(sizeof(long) * s->len);
 	s->list = malloc(sizeof(long) * 10000);
+	s->chunks = chunks(ac);
 	//printf( "\n--------------------");
 	if (writestacks(s, av))
 	{
