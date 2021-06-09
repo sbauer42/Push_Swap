@@ -1,4 +1,4 @@
-MINI = gcc -o push_swap *.c
+MINI = gcc -o push_swap main.c
 
 RM = rm -rf push_swap
 all:
